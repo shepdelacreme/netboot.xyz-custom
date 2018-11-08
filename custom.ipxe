@@ -14,10 +14,11 @@ goto ${custom_choice}
 goto custom_exit
 
 :boot_clearlinux
-kernel clearlinux/linux quiet init=/usr/lib/systemd/systemd-bootchart \
+set boot-path https://raw.githubusercontent.com/shepdelacreme/netboot.xyz-custom/master
+kernel ${boot-path}/clearlinux/linux quiet init=/usr/lib/systemd/systemd-bootchart \
 initcall_debug tsc=reliable no_timer_check noreplace-smp rw \
-initrd=clearlinux/initrd
-initrd clearlinux/initrd
+initrd=initrd
+initrd ${boot-path}/clearlinux/initrd
 boot || goto custom_exit
 
 #:option_two
