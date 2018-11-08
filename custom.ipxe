@@ -15,10 +15,10 @@ goto custom_exit
 
 :boot_clearlinux
 set boot-path https://s3.amazonaws.com/dls-pxe-images/clearlinux
-kernel ${boot-path}/clearlinux/org.clearlinux.native.4.18.16-650 quiet init=/usr/lib/systemd/systemd-bootchart \
+kernel ${boot-path}/org.clearlinux.native.4.18.16-650 quiet init=/usr/lib/systemd/systemd-bootchart \
 initcall_debug tsc=reliable no_timer_check noreplace-smp rw \
 initrd=initrd
-initrd ${boot-path}/clearlinux/initrd
+initrd ${boot-path}/initrd
 boot || goto custom_exit
 
 #:option_two
