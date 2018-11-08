@@ -14,7 +14,7 @@ goto ${custom_choice}
 goto custom_exit
 
 :boot_clearlinux
-kernel clearlinux/linux quiet init=/usr/lib/systemd/systemd-bootstart initcall_debug tsc=reliable no_timer_check noreplace-smp rw initrd=initrd
+kernel clearlinux/linux init=/usr/lib/systemd/systemd-bootchart initcall_debug tsc=reliable no_timer_check noreplace-smp rw initrd=initrd
 initrd clearlinux/initrd
 boot || goto custom_exit
 
